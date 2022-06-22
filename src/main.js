@@ -1,1 +1,3 @@
-console.log('we are live!')
+import skeleton from "./skeleton";
+
+skeleton();
