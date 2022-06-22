@@ -16,7 +16,7 @@ let bannerTitleContainer = document.createElement('div');
 
     let bannerHeader1 = document.createElement('div');
         bannerHeader1.id = 'bannerHeader1';
-        bannerHeader1.innerHTML = 'KNIGHTS';
+        bannerHeader1.innerHTML = 'KNIGHT';
         bannerTitleContainer.append(bannerHeader1)
     let bannerHeader2 = document.createElement('div');
         bannerHeader2.id = 'bannerHeader2';
@@ -39,28 +39,28 @@ let bannerTitleContainer = document.createElement('div');
             let inboxBtn = document.createElement('button');
                 inboxBtn.classList = 'list';
                 inboxBtn.innerHTML = 'Inbox'
-                inboxBtn.id = '0';
+                inboxBtn.id = 'inboxBtn';
                 inboxBtn.classList.add('btn', 'listBtn')
                 overallListMenuContainer.append(inboxBtn)
 
-            let houseList = document.createElement('button');
-                houseList.classList = 'list';
-                houseList.innerHTML = 'Sent'
-                houseList.id = '1';
-                houseList.classList.add('btn', 'listBtn')
-                overallListMenuContainer.append(houseList);
+            let sentBtn = document.createElement('button');
+                sentBtn.classList = 'list';
+                sentBtn.innerHTML = 'Sent'
+                sentBtn.id = 'sentBtn';
+                sentBtn.classList.add('btn', 'listBtn')
+                overallListMenuContainer.append(sentBtn);
 
             let junkBtn = document.createElement('button');
                 junkBtn.classList = 'list';
                 junkBtn.innerHTML = 'Junk'
-                junkBtn.id = '0';
+                junkBtn.id = 'junkBtn';
                 junkBtn.classList.add('btn', 'listBtn')
                 overallListMenuContainer.append(junkBtn)
             
             let trashBtn = document.createElement('button');
                 trashBtn.classList = 'list';
                 trashBtn.innerHTML = 'Trash'
-                trashBtn.id = '0';
+                trashBtn.id = 'trashBtn';
                 trashBtn.classList.add('btn', 'listBtn')
                 overallListMenuContainer.append(trashBtn)
             
@@ -69,13 +69,60 @@ let bannerTitleContainer = document.createElement('div');
 
 
 //Right hand popup for tasks and interactions includes popout boxes//
-    let taskAndListContainer = document.createElement('div');
-        taskAndListContainer.id = 'taskAndListContainer';
-/*
+    let emailDisplayContainer = document.createElement('div');
+        emailDisplayContainer.id = 'emailDisplayContainer';
+
+        let emailDisplayFlexContainer = document.createElement('div');
+            emailDisplayFlexContainer.id = 'emailDisplayFlexContainer'
+            emailDisplayContainer.append(emailDisplayFlexContainer)
+
+
+
+
+//addList popout box - created so that it disallows clicking outside the box//
+    let emailPopoutBoxContainer = document.createElement('div');
+        emailPopoutBoxContainer.id = 'emailPopoutBoxContainer';
+        emailPopoutBoxContainer.style.display = 'none';
+        emailDisplayContainer.append(emailPopoutBoxContainer)
+    let emailPopoutBoxFlexContainer = document.createElement('div');
+        emailPopoutBoxFlexContainer.id = 'emailPopoutBoxFlexContainer';
+        emailPopoutBoxContainer.append(emailPopoutBoxFlexContainer);
+    let emailPopoutBox = document.createElement('div');
+            emailPopoutBox.id = 'emailPopoutBox';
+            emailPopoutBoxFlexContainer.append(emailPopoutBox);
+
+        let emailDisplayTaskbar = document.createElement('div');
+                emailDisplayTaskbar.id = 'emailDisplayTaskbar';
+                emailDisplayTaskbar.classList = 'listDisplayTaskbar';
+                emailPopoutBox.append(emailDisplayTaskbar);
+           /* let emailNameFlexDisplay = document.createElement('div');
+                emailDisplayTaskBaremailNameFlexDisplay */
+            let emailNameDisplay = document.createElement('div');
+                    emailNameDisplay.id = 'emailNameDisplay';
+                    emailNameDisplay.classList.add('listHeaders');
+                    emailDisplayTaskbar.append(emailNameDisplay);
+            let emailExitBtn = document.createElement('button');
+                    emailExitBtn.id = 'emailExitBtn';
+                    emailExitBtn.classList = 'btn';
+                    emailExitBtn.innerHTML = 'x'
+                    emailDisplayTaskbar.append(emailExitBtn);
+        //addList input box//
+        let emailBodyInputContainer = document.createElement('div');
+                emailBodyInputContainer.id = 'emailBodyInputContainer';
+                emailPopoutBox.append(emailBodyInputContainer)
+
+                let emailBody = document.createElement('p');
+                    emailBody.id = 'emailBody';
+                    emailBody.classList.add('popoutItem')
+                    emailBodyInputContainer.append(emailBody);
+                
+
+
+/*          
     //Task popout box//
     let taskPopoutBoxContainer = document.createElement('div');
         taskPopoutBoxContainer.id = 'taskPopoutBoxContainer';
-        taskAndListContainer.append(taskPopoutBoxContainer)
+        emailDisplayContainer.append(taskPopoutBoxContainer)
         let taskPopoutBox = document.createElement('div');
             taskPopoutBox.id = 'taskPopoutBox';
             taskPopoutBox.classList.add('taskPopoutBox')
@@ -117,7 +164,7 @@ let bannerTitleContainer = document.createElement('div');
 //Task info right next to task popout box//
 let taskInfoPopoutContainer = document.createElement('div');
     taskInfoPopoutContainer.id = 'taskInfoPopoutContainer';
-    taskAndListContainer.append(taskInfoPopoutContainer)
+    emailDisplayContainer.append(taskInfoPopoutContainer)
 let taskInfoPopoutBox = document.createElement('div');
     taskInfoPopoutBox.id = 'taskInfoPopoutBox';
     taskInfoPopoutBox.classList.add('taskPopoutBox')
@@ -180,56 +227,56 @@ let taskInfoDisplayContainer = document.createElement('div');
     
 
     //addList popout box - created so that it disallows clicking outside the box//
-    let addListPopoutBoxContainer = document.createElement('div');
-        addListPopoutBoxContainer.id = 'addListPopoutBoxContainer';
-        addListPopoutBoxContainer.style.display = 'none';
-        taskAndListContainer.append(addListPopoutBoxContainer)
-    let addListPopoutBoxFlexContainer = document.createElement('div');
-        addListPopoutBoxFlexContainer.id = 'addListPopoutBoxFlexContainer';
-        addListPopoutBoxContainer.append(addListPopoutBoxFlexContainer);
-    let addListPopoutBox = document.createElement('div');
-            addListPopoutBox.id = 'addListPopoutBox';
-            addListPopoutBoxFlexContainer.append(addListPopoutBox);
+    let emailPopoutBoxContainer = document.createElement('div');
+        emailPopoutBoxContainer.id = 'emailPopoutBoxContainer';
+        emailPopoutBoxContainer.style.display = 'none';
+        emailDisplayContainer.append(emailPopoutBoxContainer)
+    let emailPopoutBoxFlexContainer = document.createElement('div');
+        emailPopoutBoxFlexContainer.id = 'emailPopoutBoxFlexContainer';
+        emailPopoutBoxContainer.append(emailPopoutBoxFlexContainer);
+    let emailPopoutBox = document.createElement('div');
+            emailPopoutBox.id = 'emailPopoutBox';
+            emailPopoutBoxFlexContainer.append(emailPopoutBox);
 
-        let addListDisplayTaskbar = document.createElement('div');
-                addListDisplayTaskbar.id = 'addListDisplayTaskbar';
-                addListDisplayTaskbar.classList = 'listDisplayTaskbar';
-                addListPopoutBox.append(addListDisplayTaskbar);
-            let addListNameDisplay = document.createElement('div');
-                    addListNameDisplay.id = 'addListNameDisplay';
-                    addListNameDisplay.classList.add('listHeaders');
-                    addListDisplayTaskbar.append(addListNameDisplay);
-            let addListExitBtn = document.createElement('button');
-                    addListExitBtn.id = 'addListExitBtn';
-                    addListExitBtn.classList = 'btn';
-                    addListExitBtn.innerHTML = 'x'
-                    addListDisplayTaskbar.append(addListExitBtn);
+        let emailDisplayTaskbar = document.createElement('div');
+                emailDisplayTaskbar.id = 'emailDisplayTaskbar';
+                emailDisplayTaskbar.classList = 'listDisplayTaskbar';
+                emailPopoutBox.append(emailDisplayTaskbar);
+            let emailNameDisplay = document.createElement('div');
+                    emailNameDisplay.id = 'emailNameDisplay';
+                    emailNameDisplay.classList.add('listHeaders');
+                    emailDisplayTaskbar.append(emailNameDisplay);
+            let emailExitBtn = document.createElement('button');
+                    emailExitBtn.id = 'emailExitBtn';
+                    emailExitBtn.classList = 'btn';
+                    emailExitBtn.innerHTML = 'x'
+                    emailDisplayTaskbar.append(emailExitBtn);
         //addList input box//
-        let addListInputContainer = document.createElement('div');
-                addListInputContainer.id = 'addListInputContainer';
-                addListPopoutBox.append(addListInputContainer)
+        let emailBodyInputContainer = document.createElement('div');
+                emailBodyInputContainer.id = 'emailBodyInputContainer';
+                emailPopoutBox.append(emailBodyInputContainer)
 
-                let userListInput = document.createElement('input');
-                    userListInput.type = 'text';
-                    userListInput.id = 'userListInput';
-                    userListInput.classList.add('popoutItem')
-                    addListInputContainer.append(userListInput);
+                let emailBody = document.createElement('input');
+                    emailBody.type = 'text';
+                    emailBody.id = 'emailBody';
+                    emailBody.classList.add('popoutItem')
+                    emailBodyInputContainer.append(emailBody);
                 let addListPopupBtn = document.createElement('button');
                     addListPopupBtn.id = 'addListPopupBtn';
                     addListPopupBtn.classList.add('btn','popoutItem');
                     addListPopupBtn.innerHTML = '+';
-                    addListInputContainer.append(addListPopupBtn);
+                    emailBodyInputContainer.append(addListPopupBtn);
     
         //Add date popout items
         let calendar = document.createElement('input');
             calendar.type = 'datetime-local';
             calendar.id = 'calendar';
             calendar.classList.add('popoutItem');
-            addListInputContainer.append(calendar)
+            emailBodyInputContainer.append(calendar)
 */
 
 
 
     base.append(menuBarContainer);
-    base.append(taskAndListContainer);
+    base.append(emailDisplayContainer);
 };
