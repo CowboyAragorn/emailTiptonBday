@@ -7,19 +7,21 @@ export default function inbox(){
     let emailNameDisplay = document.getElementById('emailNameDisplay')
     let emailBody = document.getElementById('emailBody');
     let emailExitBtn = document.getElementById('emailExitBtn')
+    let currentDisplayedInbox = document.getElementById('currentDisplayedInbox')
 
     const email1 = new newEmail(
         'Jerome', //from
         'Hate ur guys', //title
-        '8/7', //date
+        'Jun 7', //date
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In aliquet erat et mauris porta ultrices. Suspendisse ullamcorper justo quis placerat mattis. Mauris et nisi vel nunc dapibus cursus vitae et diam. Mauris convallis rutrum tellus aliquam pharetra. Proin volutpat eu nibh sit amet blandit. Vestibulum quis ipsum vel orci congue feugiat ut et urna. In suscipit justo nec odio congue, ac laoreet enim aliquet. Sed consequat tempor libero, nec aliquam ipsum maximus quis.'
     )
     const email2 = new newEmail(
         'Candy', //from
         'Hey handsome', //title
-        '10/10', //date
+        'Jun 13', //date
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In aliquet erat et mauris porta ultrices. Suspendisse ullamcorper justo quis placerat mattis. Mauris et nisi vel nunc dapibus cursus vitae et diam. Mauris convallis rutrum tellus aliquam pharetra. Proin volutpat eu nibh sit amet blandit. Vestibulum quis ipsum vel orci congue feugiat ut et urna. In suscipit justo nec odio congue, ac laoreet enim aliquet. Sed consequat tempor libero, nec aliquam ipsum maximus quis.'
     )
+    
     let inboxArray = [email1, email2]
 
 
@@ -34,15 +36,19 @@ export default function inbox(){
         let emailTitle = document.createElement('p');
             emailTitle.innerHTML = this.title;
             emailTitle.classList.add('emailTitle')
+        let emailDate = document.createElement('p')
+            emailDate.innerHTML = this.date;
+            emailDate.classList.add('emailDate');
         emailFlexContainer.addEventListener('click', ()=>{
             emailPopoutBoxContainer.style.display = 'flex';
-            emailNameDisplay.innerHTML = this.title;
+            emailNameDisplay.innerHTML = 'Subject: ' + this.title;
             emailBody.innerHTML = this.message;
         })
         emailDisplayFlexContainer.append(emailFlexContainer);
         emailFlexContainer.append(emailFrom);
         emailFlexContainer.append(emailTitle);
-    }
+        emailFlexContainer.append(emailDate);
+        }
 
 
 
@@ -55,6 +61,8 @@ export default function inbox(){
         for(let p = 0; p < inboxArray.length; p++){  //display the taskDisplayArray
             inboxArray[p].displayInboxPrototype();
         } 
+        currentDisplayedInbox.innerHTML = 'Inbox'
+        
     }
 
    

@@ -10,18 +10,28 @@ export default function skeleton (){
     document.body.append(base);
 
 //banner
-let bannerTitleContainer = document.createElement('div');
-    bannerTitleContainer.id = 'bannerTitleContainer'
-    banner.append(bannerTitleContainer);
+let bannerFlexContainer = document.createElement('div');
+    bannerFlexContainer.id = 'bannerFlexContainer';
+    banner.append(bannerFlexContainer);
+    let bannerTitleContainer = document.createElement('div');
+        bannerTitleContainer.id = 'bannerTitleContainer'
 
-    let bannerHeader1 = document.createElement('div');
-        bannerHeader1.id = 'bannerHeader1';
-        bannerHeader1.innerHTML = 'KNIGHT';
-        bannerTitleContainer.append(bannerHeader1)
-    let bannerHeader2 = document.createElement('div');
-        bannerHeader2.id = 'bannerHeader2';
-        bannerHeader2.innerHTML = 'mail';
-        bannerTitleContainer.append(bannerHeader2)
+        bannerFlexContainer.append(bannerTitleContainer);
+
+        let bannerHeader1 = document.createElement('div');
+            bannerHeader1.id = 'bannerHeader1';
+            bannerHeader1.innerHTML = 'KNIGHT';
+            bannerTitleContainer.append(bannerHeader1)
+        let bannerHeader2 = document.createElement('div');
+            bannerHeader2.id = 'bannerHeader2';
+            bannerHeader2.innerHTML = 'mail';
+            bannerTitleContainer.append(bannerHeader2)
+    let currentDisplayedInboxContainer = document.createElement('div');
+        currentDisplayedInboxContainer.id = 'currentDisplayedInboxContainer';
+        bannerFlexContainer.append(currentDisplayedInboxContainer)
+        let currentDisplayedInbox = document.createElement('div');
+            currentDisplayedInbox.id = 'currentDisplayedInbox';
+            currentDisplayedInboxContainer.append(currentDisplayedInbox)
 
 
 
@@ -101,11 +111,14 @@ let bannerTitleContainer = document.createElement('div');
                     emailNameDisplay.id = 'emailNameDisplay';
                     emailNameDisplay.classList.add('listHeaders');
                     emailDisplayTaskbar.append(emailNameDisplay);
+            let emailExitBtnContainer = document.createElement('div');
+                emailExitBtnContainer.id = ('emailExitBtnContainer');
+                emailDisplayTaskbar.append(emailExitBtnContainer);
             let emailExitBtn = document.createElement('button');
                     emailExitBtn.id = 'emailExitBtn';
                     emailExitBtn.classList = 'btn';
-                    emailExitBtn.innerHTML = 'x'
-                    emailDisplayTaskbar.append(emailExitBtn);
+                    emailExitBtn.innerHTML = '&#10006;'
+                    emailExitBtnContainer.append(emailExitBtn);
         //addList input box//
         let emailBodyInputContainer = document.createElement('div');
                 emailBodyInputContainer.id = 'emailBodyInputContainer';

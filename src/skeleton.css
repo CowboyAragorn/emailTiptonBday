@@ -24,26 +24,36 @@ body{
 #banner{
     display: flex;
     align-items: center;
+    justify-content: center;
     background-color: RGB(255, 202, 6);
     height: 20%;
     width: 100%;
     
 }
 
-    #bannerTitleContainer{
+#bannerFlexContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   
+    height: 100%;
+    width: 90%;
+}
+    #bannerTitleContainer, #currentDisplayedInboxContainer{
         display: flex;
         height: 50%;
         align-items: end;
         justify-content: center;
     }
-    #bannerHeader1{
-        font-family: 'ucf';
-        font-size:70pt;
-    }
-    #bannerHeader2{
-        font-family: 'ucf';
-        font-size:45pt;
-    }
+        #bannerHeader1{
+            font-family: 'ucf';
+            font-size:70pt;
+        }
+        #bannerHeader2,#currentDisplayedInbox{
+            font-family: 'ucf';
+            font-size:45pt;
+        }
+    
 
 #base{
     display: flex;
@@ -107,6 +117,7 @@ body{
             background-repeat: no-repeat;
             background-size: cover;
             display: flex;
+            font-family: sans-serif;
 
         }
         #emailDisplayFlexContainer{
@@ -137,14 +148,14 @@ body{
             display: flex;
             margin: 0;
             padding: 5pt;
-            width: 30%;
+            width: 20%;
             
         }
         .emailTitle{
             display: flex;
             margin: 0;
             padding: 5pt;
-            width: 80%;
+            width: 65%;
             
         }
 
@@ -173,7 +184,6 @@ body{
 #emailPopoutBox{
     height: 300pt;
     width: 500pt;
-
     background-color: white;
     margin-left: 7%;
     margin-bottom: 4%;
@@ -197,10 +207,32 @@ body{
     #emailNameDisplay{
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: left;
+        padding-top: 5%;
+        padding-left: 6%;
         font-size: 18pt;
         font-weight: bold;
-        width: 95%;
+        width: 92%;
+    }
+    #emailExitBtnContainer{
+        display: flex;
+        justify-content: right;
+        align-content:  center;
+        padding-right: 5px;
+        padding-top: 5px;
+        height: 90%;
+        width: 10%;
+    }
+    #emailExitBtn{
+        display: flex;
+        justify-content: center;
+        align-content:  center;
+        border-radius: 15px;
+        border: none;
+        background-color: RGB(255, 202, 6);
+        cursor: pointer;
+        font-size: 10pt;
+        padding: 8px 12px;
     }
 #emailBodyInputContainer{
     display: flex;
@@ -215,6 +247,8 @@ body{
     margin-left: 2pt;
     height: 100%;
     width: 100%;
+    padding-left: 6%;
+    padding-right: 6%;
     overflow: scroll;
 }
 ::-webkit-scrollbar {

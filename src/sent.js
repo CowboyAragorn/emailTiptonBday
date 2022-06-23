@@ -33,15 +33,19 @@ export default function sent(){
             emailFrom.classList = 'emailFrom';
         let emailTitle = document.createElement('p');
             emailTitle.innerHTML = this.title;
-            emailTitle.classList.add('emailTitle')
+            emailTitle.classList.add('emailTitle');
+        let emailDate = document.createElement('p')
+            emailDate.innerHTML = this.date;
+            emailDate.classList.add('emailDate');
         emailFlexContainer.addEventListener('click', ()=>{
             emailPopoutBoxContainer.style.display = 'flex';
-            emailNameDisplay.innerHTML = this.title;
+            emailNameDisplay.innerHTML = 'Subject: ' + this.title;
             emailBody.innerHTML = this.message;
         })
         emailDisplayFlexContainer.append(emailFlexContainer);
         emailFlexContainer.append(emailFrom);
-        emailFlexContainer.append(emailTitle);
+        emailFlexContainer.append(emailTitle)
+        emailFlexContainer.append(emailDate);;
     }
 
 
@@ -55,6 +59,7 @@ export default function sent(){
         for(let p = 0; p < sentArray.length; p++){  //display the taskDisplayArray
             sentArray[p].displaySentPrototype();
         } 
+        currentDisplayedInbox.innerHTML = 'Sent'
     }
 
    
