@@ -5,5 +5,8 @@ import login from "./login";
 
 skeleton();
 login();
+//loginScreenBackground.style.display = 'none'
 inbox();
 sent();
+
+

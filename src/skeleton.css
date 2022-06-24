@@ -293,14 +293,22 @@ body{
 #loginHeaderContainer{
     display: flex;
     justify-content: left;
-    align-items: center;
-    height: 20%;
+    align-items: flex-end;
+    height: 15%;
     width: 100%;
     font-family: 'ucf';
+    margin-bottom: 3%;
+}
+#loginHeader1{
     font-size: 30pt;
+}
+#loginHeader2{
+    font-size: 20pt;
 
 }
-#loginHeader{
+
+
+#loginHeader1{
     margin-left: 2%;
 }
 

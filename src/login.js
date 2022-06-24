@@ -4,9 +4,14 @@ export default function login(){
     let passwordInput = document.getElementById('passwordInput');
     let loginScreenBackground = document.getElementById('loginScreenBackground')
     loginBtn.addEventListener('click', loginEventListener);
-
+    
     function loginEventListener(){
-        if(userNameInput.value == 'Jacobman0313@gmail.com' && passwordInput.value == 'monkey'){
+        let userNameValue = userNameInput.value;
+        let userNameLowercase = userNameValue.toLowerCase();
+        let passwordValue = passwordInput.value;
+        let passwordLowercase = passwordValue.toLowerCase();
+    
+        if(userNameLowercase == 'coachclark@ucf.edu' && passwordLowercase == 'graydog'){
             loginScreenBackground.style.display = 'none';
         }
         else{

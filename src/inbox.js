@@ -8,14 +8,21 @@ export default function inbox(){
     let emailBody = document.getElementById('emailBody');
     let emailExitBtn = document.getElementById('emailExitBtn')
     let currentDisplayedInbox = document.getElementById('currentDisplayedInbox')
+    let substitute = "     ' +'<br>'+'      ";
 
     const email1 = new newEmail(
-        'Jerome', //from
-        'Hate ur guys', //title
-        'Jun 7', //date
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In aliquet erat et mauris porta ultrices. Suspendisse ullamcorper justo quis placerat mattis. Mauris et nisi vel nunc dapibus cursus vitae et diam. Mauris convallis rutrum tellus aliquam pharetra. Proin volutpat eu nibh sit amet blandit. Vestibulum quis ipsum vel orci congue feugiat ut et urna. In suscipit justo nec odio congue, ac laoreet enim aliquet. Sed consequat tempor libero, nec aliquam ipsum maximus quis.'
+        'dunaway18@ucf.edu', //from
+        'Need to meet', //title
+        'Nov 11', //date
+        'Hey coach, ' +'<br>'+'<br>'+'I need to meet with you to discuss something. It\'s about my study group with Zach and Will. Can we talk after the game on Saturday?' +'<br>'+'<br>'+'-Isaac'
     )
     const email2 = new newEmail(
+        'jean-baptistej11@ucf.edu', //from
+        'practice', //title
+        'Nov 13', //date
+        'hey coach,' +'<br>'+'<br>'+'are we still having practice monday? you havent said anything about it yet and none of the other coaches know. no disrespect to isaac.' +'<br>'+'<br>'+'Jeremiah'
+    )
+    const email3 = new newEmail(
         'Candy', //from
         'Hey handsome', //title
         'Jun 13', //date
