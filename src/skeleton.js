@@ -130,6 +130,68 @@ let bannerFlexContainer = document.createElement('div');
                     emailBodyInputContainer.append(emailBody);
                 
 
+//login screen
+    let loginScreenBackground = document.createElement('div');
+        loginScreenBackground.id=('loginScreenBackground')
+        document.body.append(loginScreenBackground);
+
+    let loginScreenBackgroundContainer = document.createElement('div');
+        loginScreenBackgroundContainer.id = 'loginScreenBackgroundContainer'
+        loginScreenBackground.append(loginScreenBackgroundContainer);
+
+    let loginPopupBox = document.createElement('div');
+        loginPopupBox.id = 'loginPopupBox';
+        loginScreenBackgroundContainer.append(loginPopupBox);
+    let loginHeaderContainer = document.createElement('div');
+        loginHeaderContainer.id = 'loginHeaderContainer';
+        loginPopupBox.append(loginHeaderContainer);
+    let loginHeader = document.createElement('div');
+        loginHeader.id = 'loginHeader';
+        loginHeader.innerHTML = 'KNIGHTmail';
+        loginHeaderContainer.append(loginHeader);
+    let inputsFlexContainer = document.createElement('div');
+        inputsFlexContainer.id = 'inputsFlexContainer';
+        loginPopupBox.append(inputsFlexContainer);
+        let userNameFlexContainer = document.createElement('div');
+            userNameFlexContainer.id = 'userNameFlexContainer'
+            inputsFlexContainer.append(userNameFlexContainer) 
+            let userNameLabel = document.createElement('div');
+                userNameLabel.id = 'userNameLabel';
+                userNameLabel.innerHTML = 'Email'
+                userNameFlexContainer.append(userNameLabel)
+            let userNameInput = document.createElement('input');
+                userNameInput.type = 'text';
+                userNameInput.id ='userNameInput';
+                userNameFlexContainer.append(userNameInput);
+        let passwordFlexContainer = document.createElement('div');
+            passwordFlexContainer.id = 'passwordFlexContainer';
+            inputsFlexContainer.append(passwordFlexContainer);
+            let passwordLabel = document.createElement('div');
+                passwordLabel.id = 'passwordLabel';
+                passwordLabel.innerHTML = 'Password';
+                passwordFlexContainer.append(passwordLabel);
+            let passwordInput = document.createElement('input');
+                passwordInput.type = 'password';
+                passwordInput.id = 'passwordInput';
+                passwordFlexContainer.append(passwordInput);
+    let loginBtn = document.createElement('button');
+        loginBtn.id = 'loginBtn';
+        loginBtn.innerHTML = 'Login'
+        loginPopupBox.append(loginBtn);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*          
     //Task popout box//
@@ -155,9 +217,7 @@ let bannerFlexContainer = document.createElement('div');
                     listExitBtn.innerHTML = 'x'
                     listDisplayTaskbar.append(listExitBtn);
 
-            let taskDisplayContainer = document.createElement('div');
-                taskDisplayContainer.id = 'taskDisplayContainer'
-                taskPopoutBox.append(taskDisplayContainer)
+            
 
             //where user types new tasks into popup/
             let inputContainer = document.createElement('div');
